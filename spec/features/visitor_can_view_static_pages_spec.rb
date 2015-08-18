@@ -18,4 +18,10 @@ feature 'visitor can view static pages' do
 
     expect(page).to have_content('About')
   end
+
+  it 'has a contact page' do
+    visit contact_path
+
+    expect(page).to have_content('Contact')
+  end
 end
