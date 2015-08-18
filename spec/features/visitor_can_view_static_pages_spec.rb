@@ -4,7 +4,7 @@ feature 'visitor can view static pages' do
   it 'can view the home page' do
     visit root_path
 
-    expect(page).to have_content('Home')
+    expect(page).to have_content('Welcome')
   end
 
   it 'can view the help page' do
