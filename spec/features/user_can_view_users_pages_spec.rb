@@ -8,4 +8,10 @@ feature 'user can view user pages' do
     expect(current_path).to eq('/users')
   end
 
+  it 'has a signup page' do
+    visit signup_path
+
+    expect(page).to have_content("Sign up")
+  end
+
 end
