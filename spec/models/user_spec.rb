@@ -52,4 +52,18 @@ RSpec.describe User, type: :model do
     refute user.valid?
   end
 
+  it 'will not create a user without a valid password' do
+    user = User.new(name: "Mitch", email: "mashby@aol.com",
+                        password: "       ", password_confirmation: "       ")
+
+    refute user.valid?
+  end
+
+  it 'will not create a password thats under 6 characters' do
+    user = User.new(name: "Mitch", email: "mashby@aol.com",
+                        password: "a", password_confirmation: "a")
+
+    refute user.valid?
+  end
+
 end
