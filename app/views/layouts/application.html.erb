@@ -9,9 +9,11 @@
 </head>
 <body>
   <%= render 'partials/nav' %>
-  <div class="container">
-    <%= yield %>
-    <%= render 'partials/footer' %>
-  </div>
+  <% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+  <%= yield %>
+  <%= render 'partials/footer' %>
+</div>
 </body>
 </html>
